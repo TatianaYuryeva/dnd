@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 16px;
+
+  background-color: #a7b2ff;
+  border-radius: 8px;
+}
+
+.column {
+  width: calc(33.3% - 8px);
+  min-height: 150px;
+  padding: 10px;
+
+  background-color: #eaeaea;
+  border-radius: 4px;
+}
+
+.column-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.column:nth-child(2) {
+  margin: 0 8px;
+}
+
+.header {
+  margin-bottom: 12px;
+}
+
+.hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+.cards {
+  height: 100%;
+  margin-bottom: 12px;
+}
+
+.card {
+  position: relative;
+
+  margin-bottom: 8px;
+  padding: 12px 20px 12px 12px;
+
+  word-wrap: break-word;
+
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.card-remove::after {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
+  content: "\f00d";
+  font-size: 14px;
+} 
+
+.card:hover .card-remove {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  transform: scale(1);
+}
+
+.card.dragged {
+  position: absolute;
+  z-index: 999;
+
+  width: 250px;
+
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.card.dragged:hover {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.container:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
